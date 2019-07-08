@@ -1,0 +1,28 @@
+{
+  "name": "ShadowCljsReactNative",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "deps": "yarn install",
+    "app:watch": "shadow-cljs watch app",
+    "app:packager": "node node_modules/react-native/local-cli/cli.js start --host 0.0.0.0 --port 8081",
+    "app:android": "node node_modules/react-native/local-cli/cli.js run-android",    
+    "app:ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "logs:android": "node node_modules/react-native/local-cli/cli.js log-android",
+    "logs:ios": "node node_modules/react-native/local-cli/cli.js log-ios"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-native": "0.59.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "metro-react-native-babel-preset": "^0.54.0",
+    "react-native-cli": "^2.0.1",
+    "shadow-cljs": "^2.8.36"
+  },
+  "engines": {
+    "node": ">=10.0.0 <12.0.0"
+  }
+}
