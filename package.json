@@ -6,7 +6,7 @@
     "deps": "yarn install",
     "app:watch": "shadow-cljs watch app",
     "app:packager": "node node_modules/react-native/local-cli/cli.js start --host 0.0.0.0 --port 8081",
-    "app:android": "node node_modules/react-native/local-cli/cli.js run-android",    
+    "app:android": "node node_modules/react-native/local-cli/cli.js run-android",
     "app:ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "logs:android": "node node_modules/react-native/local-cli/cli.js log-android",
     "logs:ios": "node node_modules/react-native/local-cli/cli.js log-ios"

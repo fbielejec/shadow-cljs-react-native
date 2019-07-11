@@ -1,11 +1,9 @@
 (ns app.core
   (:require ["react-native" :as rn]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [app.react-native :as react-native]))
 
-(def app-registry (.-AppRegistry rn))
-(defonce logo-img (js/require "./assets/shadow-cljs.png"))
-
-(defonce component-to-update (atom nil))
+(defonce logo-img (js/require "../assets/shadow-cljs.png"))
 
 (defn root []
   [:> rn/View {:style {:flex 1
@@ -14,23 +12,18 @@
                        :justifyContent "center"}}
    [:> rn/Text {:style {:fontWeight "bold"
                         :fontSize 24
-                        :color "blue"}} "Hello on iOS!"]
+                        :color "blue"}}
+    "Hello ReactNative!"]
    [:> rn/Image {:source logo-img
                  :style {:width 200
                          :height 200}}]])
 
-(def updatable-root
-  (with-meta root
-    {:component-did-mount
-     (fn [] (this-as ^js this
-              (reset! component-to-update this)))}))
-
 (defn reload
   {:dev/after-load true}
   []
-  (prn "app reloaded")
-  (.forceUpdate ^js @component-to-update))
+  (react-native/render-root "ShadowCljsReactNative" (reagent.core/as-element [root]))
+  (prn "app reloaded"))
 
 (defn init []
-  (.registerComponent app-registry "react native demo" #(r/reactify-component updatable-root))
+  (react-native/render-root "ShadowCljsReactNative" (reagent.core/as-element [root]))
   (prn "app initialized"))
