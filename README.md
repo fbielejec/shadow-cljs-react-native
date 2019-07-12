@@ -33,7 +33,7 @@ M-x cider-connect
 ### General
 
 Disable _Live Reloading_ and _Hot Reloading_ in the simulator.
-Shadow-cljs included it's own `{:dev/after-load true}` mechanism for live-reloading, which will preserve app state (for exmaple if you are using [re-frame](https://github.com/Day8/re-frame)).
+Shadow-cljs included it's own `{:dev/after-load true}` mechanism for live-reloading, which will preserve app state (for example if you are using [re-frame](https://github.com/Day8/re-frame)).
 
 ### Android
 
@@ -52,4 +52,4 @@ yarn app:ios
 ### iOS on Linux
 
 Please read an accompanying blog post:
-https://github.com/fbielejec/shadow-cljs-react-native
+https://www.blog.nodrama.io/react-native-xcode-linux/
